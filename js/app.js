@@ -9,8 +9,8 @@ window.fetch = async function(url, options) {
         const isLocal = window.location.hostname === 'localhost' || window.location.hostname.startsWith('192.168.') || window.location.hostname.startsWith('10.');
         const backendUrl = (isLocal && !isCapacitorNative) ? window.location.protocol + '//' + window.location.hostname + ':8001' : envUrl;
 
-        // Rewrite proxy paths for production static site or Capacitor
-        if ((!isLocal || isCapacitorNative) && url.startsWith('/')) {
+        // Rewrite proxy paths for Capacitor
+        if (isCapacitorNative && url.startsWith('/')) {
             if (url.startsWith('/pm-') || url.startsWith('/api/')) {
                 url = backendUrl + url;
             }

@@ -1,0 +1,13 @@
+{
+  "rewrites": [
+    { "source": "/pm-catalog/(.*)", "destination": "https://api.tidal.com/v1/$1" },
+    { "source": "/pm-catalog-v2/(.*)", "destination": "https://openapi.tidal.com/v2/$1" },
+    { "source": "/pm-audio/(.*)", "destination": "https://music-api.albatross0071.workers.dev/api/$1" },
+    { "source": "/pm-amazon/(.*)", "destination": "https://amz.geeked.wtf/$1" },
+    { "source": "/pm-lyrics/(.*)", "destination": "https://lyricsplus.prjktla.workers.dev/$1" },
+    { "source": "/pm-lyrics-alt/(.*)", "destination": "https://lyrics-plus-backend.vercel.app/$1" },
+    { "source": "/api/(.*)", "destination": "https://pulse-music-backend.onrender.com/api/$1" },
+    { "source": "/health", "destination": "https://pulse-music-backend.onrender.com/health" },
+    { "source": "/(.*)", "destination": "/index.html" }
+  ]
+}
