@@ -105,12 +105,12 @@ export default defineConfig(({ mode }) => {
                     rewrite: (path) => path.replace(/^\/pm-lyrics-alt/, '')
                 },
                 '/pm-api-samidy': {
-                    target: 'https://monochrome-api.samidy.com/api',
+                    target: 'https://monochrome-api.samidy.com',
                     changeOrigin: true,
                     rewrite: (path) => path.replace(/^\/pm-api-samidy/, '')
                 },
                 '/pm-api': {
-                    target: 'https://pulse-music-backend.onrender.com/api',
+                    target: 'https://api.monochrome.tf',
                     changeOrigin: true,
                     rewrite: (path) => path.replace(/^\/pm-api/, '')
                 },
