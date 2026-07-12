@@ -3,7 +3,7 @@
 import { SVG_RIGHT_ARROW } from './icons';
 
 export const apiSettings = {
-    STORAGE_KEY: 'pulse music-api-instances-v13',
+    STORAGE_KEY: 'pulse music-api-instances-v14',
     INSTANCES_URLS: ['/instances.json'],
     defaultInstances: { api: [], streaming: [], qobuz: [] },
     userInstances: null,
