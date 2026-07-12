@@ -3052,7 +3052,7 @@ export const amazonMusicSettings = {
     API_BASE_URL_KEY: 'amazon-music-api-base-url',
     TURNSTILE_SITE_KEY: 'amazon-music-turnstile-site-key',
     TURNSTILE_BYPASS_TOKEN: 'amazon-music-turnstile-bypass-token',
-    DEFAULT_API_BASE_URL: '/pm-amazon',
+    DEFAULT_API_BASE_URL: '/api',
     DEFAULT_TURNSTILE_SITE_KEY: '0x4AAAAAADgxqF6QVMm0GLHH',
 
     isEnabled() {
@@ -3071,7 +3071,7 @@ export const amazonMusicSettings = {
     getApiBaseUrl() {
         try {
             let url = localStorage.getItem(this.API_BASE_URL_KEY);
-            if (url === 'https://amz.geeked.wtf') {
+            if (url === 'https://amz.geeked.wtf' || url === '/pm-amazon') {
                 // Auto-migrate to backend proxy
                 url = null;
                 localStorage.removeItem(this.API_BASE_URL_KEY);
