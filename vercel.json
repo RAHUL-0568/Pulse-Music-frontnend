@@ -1,4 +1,5 @@
 {
+  "framework": "vite",
   "rewrites": [
     { "source": "/pm-catalog/(.*)", "destination": "https://api.tidal.com/v1/$1" },
     { "source": "/pm-catalog-v2/(.*)", "destination": "https://openapi.tidal.com/v2/$1" },
