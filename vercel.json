@@ -1,14 +1,14 @@
 {
   "framework": "vite",
   "rewrites": [
-    { "source": "/pm-catalog/(.*)", "destination": "https://api.tidal.com/v1/$1" },
-    { "source": "/pm-catalog-v2/(.*)", "destination": "https://openapi.tidal.com/v2/$1" },
-    { "source": "/pm-audio/(.*)", "destination": "https://music-api.albatross0071.workers.dev/api/$1" },
-    { "source": "/pm-amazon/(.*)", "destination": "https://amz.geeked.wtf/$1" },
-    { "source": "/pm-lyrics/(.*)", "destination": "https://lyricsplus.prjktla.workers.dev/$1" },
-    { "source": "/pm-lyrics-alt/(.*)", "destination": "https://lyrics-plus-backend.vercel.app/$1" },
-    { "source": "/pm-api/(.*)", "destination": "https://api.monochrome.tf/$1" },
-    { "source": "/pm-api-samidy/(.*)", "destination": "https://monochrome-api.samidy.com/$1" },
+    { "source": "/pm-catalog/(.*)", "destination": "https://pulse-music-backend.onrender.com/pm-catalog/$1" },
+    { "source": "/pm-catalog-v2/(.*)", "destination": "https://pulse-music-backend.onrender.com/pm-catalog-v2/$1" },
+    { "source": "/pm-audio/(.*)", "destination": "https://pulse-music-backend.onrender.com/pm-audio/$1" },
+    { "source": "/pm-amazon/(.*)", "destination": "https://pulse-music-backend.onrender.com/pm-amazon/$1" },
+    { "source": "/pm-lyrics/(.*)", "destination": "https://pulse-music-backend.onrender.com/pm-lyrics/$1" },
+    { "source": "/pm-lyrics-alt/(.*)", "destination": "https://pulse-music-backend.onrender.com/pm-lyrics-alt/$1" },
+    { "source": "/pm-api/(.*)", "destination": "https://pulse-music-backend.onrender.com/pm-api/$1" },
+    { "source": "/pm-api-samidy/(.*)", "destination": "https://pulse-music-backend.onrender.com/pm-api-samidy/$1" },
     { "source": "/api/(.*)", "destination": "https://pulse-music-backend.onrender.com/api/$1" },
     { "source": "/health", "destination": "https://pulse-music-backend.onrender.com/health" },
     { "source": "/(.*)", "destination": "/index.html" }

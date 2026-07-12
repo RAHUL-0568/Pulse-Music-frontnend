@@ -1907,7 +1907,7 @@ export class LosslessAPI {
             params.append('formats', format);
         }
 
-        const url = `${devBaseUrl}/trackManifests/?${params.toString()}`;
+        const url = `${devBaseUrl}/track/?${params.toString()}`;
         if (import.meta.env.DEV) {
             console.log('[dev-mode]', url);
         }
@@ -1935,7 +1935,7 @@ export class LosslessAPI {
             params.append('formats', format);
         }
 
-        const response = await this.fetchWithRetry(`/trackManifests/?${params.toString()}`, { type: 'streaming' });
+        const response = await this.fetchWithRetry(`/track/?${params.toString()}`, { type: 'streaming' });
         const jsonResponse = await response.json();
         const result = this.parseTrackLookup(await this.normalizeTrackManifestResponse(jsonResponse, quality));
 
