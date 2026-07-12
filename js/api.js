@@ -2723,20 +2723,29 @@ export class LosslessAPI {
             bypassToken = '';
         }
 
+        let isVercelLive = false;
+        try {
+            if (window.location && window.location.hostname && !window.location.hostname.includes('localhost') && !window.location.hostname.includes('127.0.0.1')) {
+                isVercelLive = true;
+            }
+        } catch (e) {}
+
         if (bypassToken && !forceTurnstile) {
             params.set('bypass_token', bypassToken);
-        } else {
+        } else if (!isVercelLive) {
             const turnstileJwt = await this.getTurnstileJwt({ forceRefresh: forceTurnstile }).catch(() => null);
             if (turnstileJwt) {
                 headers['X-Turnstile-JWT'] = turnstileJwt;
             }
-            // If turnstileJwt is null (e.g. Turnstile failed on non-whitelisted domain),
-            // still attempt the request without the JWT — the browser's residential IP
-            // may be sufficient for the API to respond.
+        }
+
+        let targetUrl = `${apiBaseUrl}/api/track/?${params.toString()}`;
+        if (isVercelLive) {
+            targetUrl = `/api/amazon-track?${params.toString()}`;
         }
 
         const response = await this.fetchWithTimeout(
-            `${apiBaseUrl}/api/track/?${params.toString()}`,
+            targetUrl,
             {
                 headers,
             },
